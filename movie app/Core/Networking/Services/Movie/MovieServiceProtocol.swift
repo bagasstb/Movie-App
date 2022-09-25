@@ -11,4 +11,5 @@ protocol MovieServiceProtocol {
     
     func getGenre(success: @escaping (GenreModel) -> Void, failure: @escaping (NSError) -> Void, unauthorized: @escaping () -> Void)
     func getMovieByGenre(genre: String, success: @escaping (MovieModel) -> Void, failure: @escaping (NSError) -> Void, unauthorized: @escaping () -> Void)
+    func getMovieReviewById(id: String, success: @escaping (ReviewModel) -> Void, failure: @escaping (NSError) -> Void, unauthorized: @escaping () -> Void)
 }

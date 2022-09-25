@@ -12,8 +12,11 @@
             <connections>
                 <outlet property="backdropImageView" destination="xRA-mz-FcC" id="m5h-jV-dEN"/>
                 <outlet property="descriptionLabel" destination="bDG-cH-Hvw" id="JwW-jh-k0A"/>
+                <outlet property="reviewButton" destination="i85-0x-3je" id="Rbp-DU-VZp"/>
                 <outlet property="summaryTitleLabel" destination="KJI-sC-TeN" id="dXJ-mv-jha"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="voteLabel" destination="KSh-yP-Krk" id="zo0-Tm-C87"/>
+                <outlet property="voteValueLabel" destination="Jum-KG-vx5" id="JqE-Rr-LRR"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -28,29 +31,64 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJI-sC-TeN">
-                    <rect key="frame" x="16" y="252" width="358" height="21"/>
+                    <rect key="frame" x="16" y="375" width="358" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSh-yP-Krk">
+                    <rect key="frame" x="16" y="247" width="358" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDG-cH-Hvw">
-                    <rect key="frame" x="16" y="289" width="358" height="20.333333333333314"/>
+                    <rect key="frame" x="16" y="406" width="358" height="20.333333333333314"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jum-KG-vx5">
+                    <rect key="frame" x="16" y="278" width="358" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i85-0x-3je">
+                    <rect key="frame" x="16" y="315" width="140" height="44"/>
+                    <color key="backgroundColor" red="0.17254901959999999" green="0.21960784310000001" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="vvf-mz-mIE"/>
+                        <constraint firstAttribute="width" constant="140" id="ySE-rH-utL"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="View Review">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="viewReviewPressed:" destination="-1" eventType="touchUpInside" id="aVc-wy-tdY"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="bDG-cH-Hvw" firstAttribute="top" secondItem="KJI-sC-TeN" secondAttribute="bottom" constant="16" id="4H5-zq-QHP"/>
+                <constraint firstItem="bDG-cH-Hvw" firstAttribute="top" secondItem="KJI-sC-TeN" secondAttribute="bottom" constant="10" id="4H5-zq-QHP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Jum-KG-vx5" secondAttribute="trailing" constant="16" id="9Dr-67-0gf"/>
                 <constraint firstItem="xRA-mz-FcC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="BFa-Qi-HZx"/>
+                <constraint firstItem="KJI-sC-TeN" firstAttribute="top" secondItem="i85-0x-3je" secondAttribute="bottom" constant="16" id="IdF-dl-uQj"/>
+                <constraint firstItem="Jum-KG-vx5" firstAttribute="top" secondItem="KSh-yP-Krk" secondAttribute="bottom" constant="10" id="KYl-Yt-dAN"/>
+                <constraint firstItem="KSh-yP-Krk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="R6X-2w-gh5"/>
                 <constraint firstItem="bDG-cH-Hvw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="S4E-IE-VZD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KSh-yP-Krk" secondAttribute="trailing" constant="16" id="V8h-RG-HAy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bDG-cH-Hvw" secondAttribute="trailing" constant="16" id="VRl-6E-DVN"/>
-                <constraint firstItem="KJI-sC-TeN" firstAttribute="top" secondItem="xRA-mz-FcC" secondAttribute="bottom" constant="25" id="gwQ-FY-CMh"/>
+                <constraint firstItem="i85-0x-3je" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="coF-zq-T1y"/>
+                <constraint firstItem="Jum-KG-vx5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="dCG-Nc-b4x"/>
                 <constraint firstItem="xRA-mz-FcC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lF0-2f-dda"/>
                 <constraint firstItem="KJI-sC-TeN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="pOF-jn-F8N"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KJI-sC-TeN" secondAttribute="trailing" constant="16" id="sdX-g1-GxQ"/>
+                <constraint firstItem="i85-0x-3je" firstAttribute="top" secondItem="Jum-KG-vx5" secondAttribute="bottom" constant="16" id="yRH-j1-FsE"/>
+                <constraint firstItem="KSh-yP-Krk" firstAttribute="top" secondItem="xRA-mz-FcC" secondAttribute="bottom" constant="20" id="z9a-rm-FM3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xRA-mz-FcC" secondAttribute="trailing" id="zty-m9-hkg"/>
             </constraints>
             <point key="canvasLocation" x="4.615384615384615" y="20.616113744075829"/>

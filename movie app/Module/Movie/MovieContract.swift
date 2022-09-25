@@ -15,6 +15,7 @@ protocol MovieViewProtocol: BaseViewProtocol {
 protocol MoviePresenterProtocol: BasePresenterProtocol {
     var genreItemModel: GenreItemModel? { get }
     var movieModel: MovieModel? { get }
+    var isLoadData: Bool { get set }
     
     func backPressed()
     func getData()

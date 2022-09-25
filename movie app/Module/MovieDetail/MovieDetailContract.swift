@@ -17,10 +17,12 @@ protocol MovieDetailPresenterProtocol: BasePresenterProtocol {
     
     func getData()
     func backPressed()
+    func reviewPressed()
 }
 
 protocol MovieDetailWireframeProtocol: BaseWireframeProtocol {
     func popViwController()
+    func pushReview(with model: MovieItemModel)
 }
 
 protocol MovieDetailInteractorProtocol: BaseInteractorProtocol {}

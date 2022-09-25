@@ -29,6 +29,12 @@ class MovieDetailWireframe: MovieDetailWireframeProtocol {
         controller?.navigationController?.popViewController(animated: true)
     }
     
+    func pushReview(with model: MovieItemModel) {
+        let router = Router()
+        let reviewViewController = router.setupReviewViewController(movieItemModel: model)
+        controller?.navigationController?.pushViewController(reviewViewController, animated: true)
+    }
+    
     func pushLogin() {
         
     }

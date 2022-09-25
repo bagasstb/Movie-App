@@ -61,4 +61,16 @@ extension MovieViewController: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter?.movieDidSelect(with: indexPath.row)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        // MARK: - Pagination
+        let scrollOffset = scrollView.contentOffset.y + scrollView.frame.size.height
+        
+        if scrollOffset > scrollView.contentSize.height {
+            presenter?.isLoadData = true
+            print("Load data")
+//            presenter?.fetchPrograms()
+        }
+    }
 }

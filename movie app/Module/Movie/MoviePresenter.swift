@@ -16,6 +16,7 @@ class MoviePresenter: MoviePresenterProtocol {
     let wireframe: MovieWireframeProtocol
     
     var genreItemModel: GenreItemModel?
+    var isLoadData: Bool = false
     var movieModel: MovieModel? {
         didSet {
             DispatchQueue.main.async { [weak self] in

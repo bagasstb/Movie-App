@@ -31,6 +31,11 @@ class MovieDetailPresenter: MovieDetailPresenterProtocol {
     func backPressed() {
         wireframe.popViwController()
     }
+    
+    func reviewPressed() {
+        guard let movieItemModel = movieItemModel else { return }
+        wireframe.pushReview(with: movieItemModel)
+    }
 }
 
 extension MovieDetailPresenter: MovieDetailInteractorDelegate {
