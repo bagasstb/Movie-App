@@ -15,13 +15,27 @@ class MainPresenter: MainPresenterProtocol {
     let interactor: MainInteractorProtocol
     let wireframe: MainWireframeProtocol
     
+    var genreModel: GenreModel? {
+        didSet {
+            view?.reloadCollection()
+        }
+    }
+    
     init(interactor: MainInteractorProtocol, wireframe: MainWireframeProtocol) {
         self.interactor = interactor
         self.wireframe = wireframe
     }
+    
+    func getData() {
+        interactor.getGenre()
+    }
 }
 
 extension MainPresenter: MainInteractorDelegate {
+    
+    func getGenreDidSuccess(model: GenreModel) {
+        genreModel = model
+    }
     
     func serviceRequestDidFail(_ error: NSError, requestType: RequestType?) {
         

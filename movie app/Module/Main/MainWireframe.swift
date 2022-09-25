@@ -14,10 +14,12 @@ class MainWireframe: MainWireframeProtocol {
     weak var controller: MainViewController?
     
     func setupMainViewController() -> MainViewController {
+        let service = MovieService()
         let interactor = MainInteractor()
         let presenter = MainPresenter(interactor: interactor, wireframe: self)
         let view = MainViewController()
         interactor.delegate = presenter
+        interactor.service = service
         controller = view
         view.presenter = presenter
         presenter.view = view

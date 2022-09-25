@@ -37,29 +37,15 @@ class Services {
             
             
             do {
-//                #if DEBUG || STAGING || ADHOC
+                #if DEBUG || STAGING || ADHOC
                 print(">>>>>>>>>>>>> End of Request: \(url)")
                 print("Response: ")
                 print("\(String(data: data ?? Data(), encoding: .utf8) ?? "nil")")
-//                #endif
+                #endif
                 
                 let result = try self.jsonDecoder.decode(T.self, from: data ?? Data())
 
-//                let baseModel = (result as? BaseModel)
-//                let status = baseModel?.status ?? 0
-//                let message = baseModel?.message
-                
-//                if status == 0 {
-//                    success(result)
-//                } else {
-//                    failure(isCache, NSError(domain: "MovieService", code: status, userInfo: ["error": message ?? ""]))
-//                }
-//                switch status {
-//                case 1...200:
-//                    success(result)
-//                default:
-//                    failure(isCache, NSError(domain: "KariermuService", code: status, userInfo: ["error": message ?? ""]))
-//                }
+                    success(result)
                 
             } catch let err as NSError {
                 print("Failed request: \(err)")
@@ -67,17 +53,6 @@ class Services {
             }
         }
     }
-    
-//    private func getHeaders(_ needHeader: Bool) -> HTTPHeaders? {
-//        if needHeader {
-//            guard let token = UserDefaults.preference.string(forKey: UserDefaultKey.userToken) else {
-//                return nil
-//            }
-//            return ["Authorization": "Bearer \(token)"]
-//        } else {
-//            return nil
-//        }
-//    }
 
 }
 

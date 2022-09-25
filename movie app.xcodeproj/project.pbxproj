@@ -31,6 +31,19 @@
 		B877119A28DF9B97005B35AA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B877119928DF9B97005B35AA /* Router.swift */; };
 		B877119C28DF9BB4005B35AA /* BaseContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B877119B28DF9BB4005B35AA /* BaseContract.swift */; };
 		B877119E28DF9C08005B35AA /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B877119D28DF9C08005B35AA /* RequestType.swift */; };
+		B87711A228E0231C005B35AA /* GenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87711A028E0231C005B35AA /* GenreCollectionViewCell.swift */; };
+		B87711A328E0231C005B35AA /* GenreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B87711A128E0231C005B35AA /* GenreCollectionViewCell.xib */; };
+		B87711A828E0259F005B35AA /* Size+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87711A728E0259F005B35AA /* Size+Utils.swift */; };
+		B87711AB28E03AC7005B35AA /* UIViewController+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87711AA28E03AC7005B35AA /* UIViewController+Components.swift */; };
+		B87711AF28E03D19005B35AA /* Avenir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B87711AE28E03D19005B35AA /* Avenir-Medium.ttf */; };
+		B87711B128E03D2A005B35AA /* Avenir-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B87711B028E03D2A005B35AA /* Avenir-Black.ttf */; };
+		B87711B328E03D3C005B35AA /* Avenir-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B87711B228E03D3C005B35AA /* Avenir-Light.ttf */; };
+		B87711B528E03DB2005B35AA /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87711B428E03DB2005B35AA /* UIFont+Extension.swift */; };
+		B87711B728E03DC0005B35AA /* UIFont+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87711B628E03DC0005B35AA /* UIFont+Assets.swift */; };
+		B87711B928E0436D005B35AA /* UICollectionView+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87711B828E0436D005B35AA /* UICollectionView+Components.swift */; };
+		B87711BB28E044B6005B35AA /* UIView+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87711BA28E044B6005B35AA /* UIView+Components.swift */; };
+		B87711BE28E04501005B35AA /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87711BD28E04501005B35AA /* UIColor+Extension.swift */; };
+		B87711C028E0450E005B35AA /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87711BF28E0450E005B35AA /* UIColor+Theme.swift */; };
 		B87BE58128DF22A7004CF63D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87BE58028DF22A7004CF63D /* Config.swift */; };
 		B87BE58328DF2E06004CF63D /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87BE58228DF2E06004CF63D /* GenreModel.swift */; };
 		B87BE58528DF2E1B004CF63D /* GenreItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87BE58428DF2E1B004CF63D /* GenreItemModel.swift */; };
@@ -84,6 +97,19 @@
 		B877119928DF9B97005B35AA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B877119B28DF9BB4005B35AA /* BaseContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseContract.swift; sourceTree = "<group>"; };
 		B877119D28DF9C08005B35AA /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		B87711A028E0231C005B35AA /* GenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCollectionViewCell.swift; sourceTree = "<group>"; };
+		B87711A128E0231C005B35AA /* GenreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreCollectionViewCell.xib; sourceTree = "<group>"; };
+		B87711A728E0259F005B35AA /* Size+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Size+Utils.swift"; sourceTree = "<group>"; };
+		B87711AA28E03AC7005B35AA /* UIViewController+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Components.swift"; sourceTree = "<group>"; };
+		B87711AE28E03D19005B35AA /* Avenir-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Medium.ttf"; sourceTree = "<group>"; };
+		B87711B028E03D2A005B35AA /* Avenir-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Black.ttf"; sourceTree = "<group>"; };
+		B87711B228E03D3C005B35AA /* Avenir-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Light.ttf"; sourceTree = "<group>"; };
+		B87711B428E03DB2005B35AA /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		B87711B628E03DC0005B35AA /* UIFont+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Assets.swift"; sourceTree = "<group>"; };
+		B87711B828E0436D005B35AA /* UICollectionView+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Components.swift"; sourceTree = "<group>"; };
+		B87711BA28E044B6005B35AA /* UIView+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Components.swift"; sourceTree = "<group>"; };
+		B87711BD28E04501005B35AA /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		B87711BF28E0450E005B35AA /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		B87BE58028DF22A7004CF63D /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		B87BE58228DF2E06004CF63D /* GenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
 		B87BE58428DF2E1B004CF63D /* GenreItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreItemModel.swift; sourceTree = "<group>"; };
@@ -173,6 +199,7 @@
 				B87BE57D28DF1FF8004CF63D /* Resource */,
 				B87BE57B28DF1FC5004CF63D /* Core */,
 				B87BE57C28DF1FD0004CF63D /* Util */,
+				B87711A928E03A9D005B35AA /* Component */,
 				B83BA7F628DEFF430072D79A /* LaunchScreen.storyboard */,
 				B83BA7F928DEFF430072D79A /* Info.plist */,
 			);
@@ -231,6 +258,7 @@
 		B877118B28DF9B2A005B35AA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B87711A628E0254F005B35AA /* Genre */,
 				B877119428DF9B69005B35AA /* MainViewController.swift */,
 				B877119528DF9B69005B35AA /* MainViewController.xib */,
 			);
@@ -244,6 +272,62 @@
 				B877119B28DF9BB4005B35AA /* BaseContract.swift */,
 			);
 			path = BaseModule;
+			sourceTree = "<group>";
+		};
+		B877119F28E022F9005B35AA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B87711A028E0231C005B35AA /* GenreCollectionViewCell.swift */,
+				B87711A128E0231C005B35AA /* GenreCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B87711A628E0254F005B35AA /* Genre */ = {
+			isa = PBXGroup;
+			children = (
+				B877119F28E022F9005B35AA /* Cell */,
+			);
+			path = Genre;
+			sourceTree = "<group>";
+		};
+		B87711A928E03A9D005B35AA /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				B87711AA28E03AC7005B35AA /* UIViewController+Components.swift */,
+				B87711B828E0436D005B35AA /* UICollectionView+Components.swift */,
+				B87711BA28E044B6005B35AA /* UIView+Components.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		B87711AC28E03CCE005B35AA /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				B87711AD28E03CE0005B35AA /* File */,
+				B87711B428E03DB2005B35AA /* UIFont+Extension.swift */,
+				B87711B628E03DC0005B35AA /* UIFont+Assets.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		B87711AD28E03CE0005B35AA /* File */ = {
+			isa = PBXGroup;
+			children = (
+				B87711B228E03D3C005B35AA /* Avenir-Light.ttf */,
+				B87711AE28E03D19005B35AA /* Avenir-Medium.ttf */,
+				B87711B028E03D2A005B35AA /* Avenir-Black.ttf */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
+		B87711BC28E044ED005B35AA /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				B87711BD28E04501005B35AA /* UIColor+Extension.swift */,
+				B87711BF28E0450E005B35AA /* UIColor+Theme.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 		B87BE57A28DF1FBD004CF63D /* Module */ = {
@@ -269,6 +353,7 @@
 		B87BE57C28DF1FD0004CF63D /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				B87711A728E0259F005B35AA /* Size+Utils.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -276,6 +361,8 @@
 		B87BE57D28DF1FF8004CF63D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B87711BC28E044ED005B35AA /* Color */,
+				B87711AC28E03CCE005B35AA /* Font */,
 				B83BA7F428DEFF430072D79A /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -409,9 +496,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B87711A328E0231C005B35AA /* GenreCollectionViewCell.xib in Resources */,
+				B87711B128E03D2A005B35AA /* Avenir-Black.ttf in Resources */,
+				B87711B328E03D3C005B35AA /* Avenir-Light.ttf in Resources */,
 				B83BA7F828DEFF430072D79A /* LaunchScreen.storyboard in Resources */,
 				B83BA7F528DEFF430072D79A /* Assets.xcassets in Resources */,
 				B877119728DF9B69005B35AA /* MainViewController.xib in Resources */,
+				B87711AF28E03D19005B35AA /* Avenir-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,22 +631,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				B877119328DF9B40005B35AA /* MainWireframe.swift in Sources */,
+				B87711B728E03DC0005B35AA /* UIFont+Assets.swift in Sources */,
+				B87711BB28E044B6005B35AA /* UIView+Components.swift in Sources */,
+				B87711BE28E04501005B35AA /* UIColor+Extension.swift in Sources */,
 				B877118228DF9659005B35AA /* MovieServiceProtocol.swift in Sources */,
+				B87711C028E0450E005B35AA /* UIColor+Theme.swift in Sources */,
 				B877118028DF9649005B35AA /* MovieAPI.swift in Sources */,
 				B87BE58328DF2E06004CF63D /* GenreModel.swift in Sources */,
 				B877119028DF9B40005B35AA /* MainContract.swift in Sources */,
+				B87711B528E03DB2005B35AA /* UIFont+Extension.swift in Sources */,
 				B877119228DF9B40005B35AA /* MainInteractor.swift in Sources */,
 				B877119628DF9B69005B35AA /* MainViewController.swift in Sources */,
 				B877119C28DF9BB4005B35AA /* BaseContract.swift in Sources */,
 				B87BE58528DF2E1B004CF63D /* GenreItemModel.swift in Sources */,
 				B877119128DF9B40005B35AA /* MainPresenter.swift in Sources */,
+				B87711AB28E03AC7005B35AA /* UIViewController+Components.swift in Sources */,
 				B877119A28DF9B97005B35AA /* Router.swift in Sources */,
+				B87711B928E0436D005B35AA /* UICollectionView+Components.swift in Sources */,
 				B87BE58128DF22A7004CF63D /* Config.swift in Sources */,
+				B87711A228E0231C005B35AA /* GenreCollectionViewCell.swift in Sources */,
 				B877118428DF9667005B35AA /* MovieService.swift in Sources */,
 				B877119E28DF9C08005B35AA /* RequestType.swift in Sources */,
 				B83BA7EC28DEFF410072D79A /* AppDelegate.swift in Sources */,
 				B877118628DF9691005B35AA /* BaseService.swift in Sources */,
 				B83BA7EE28DEFF410072D79A /* SceneDelegate.swift in Sources */,
+				B87711A828E0259F005B35AA /* Size+Utils.swift in Sources */,
 				B877118828DF96DC005B35AA /* SessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

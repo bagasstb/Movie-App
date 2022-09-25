@@ -45,3 +45,13 @@ protocol BaseInteractorDelegate: AnyObject {
     /// Service succeed with status code 401
     func userUnAuthorized()
 }
+
+protocol TableViewCellProtocol: AnyObject {
+    static var identifier: String { get }
+    static func nib() -> UINib
+}
+
+protocol CollectionViewCellProtocol: AnyObject {
+    static var identifier: String { get }
+    static func nib() -> UINib
+}

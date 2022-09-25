@@ -8,12 +8,22 @@
 
 import Foundation
 
-protocol MainViewProtocol: BaseViewProtocol {}
+protocol MainViewProtocol: BaseViewProtocol {
+    func reloadCollection()
+}
 
-protocol MainPresenterProtocol: BasePresenterProtocol {}
+protocol MainPresenterProtocol: BasePresenterProtocol {
+    var genreModel: GenreModel? { get }
+    
+    func getData()
+}
 
 protocol MainWireframeProtocol: BaseWireframeProtocol {}
 
-protocol MainInteractorProtocol: BaseInteractorProtocol {}
+protocol MainInteractorProtocol: BaseInteractorProtocol {
+    func getGenre()
+}
 
-protocol MainInteractorDelegate: BaseInteractorDelegate {}
+protocol MainInteractorDelegate: BaseInteractorDelegate {
+    func getGenreDidSuccess(model: GenreModel)
+}
