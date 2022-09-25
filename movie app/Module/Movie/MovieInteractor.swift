@@ -14,8 +14,8 @@ class MovieInteractor: MovieInteractorProtocol {
     weak var delegate: MovieInteractorDelegate?
     var service: MovieServiceProtocol?
     
-    func getMovie(with genre: String) {
-        service?.getMovieByGenre(genre: genre, success: { [weak self] movieModel in
+    func getMovie(with genre: String, page: String) {
+        service?.getMovieByGenre(genre: genre, page: page, success: { [weak self] movieModel in
             self?.delegate?.getMovieDidSuccess(model: movieModel)
         }, failure: { [weak self] error in
             self?.delegate?.serviceRequestDidFail(error, requestType: .default)

@@ -48,12 +48,12 @@ extension MovieViewController: MovieViewProtocol {
 extension MovieViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter?.movieModel?.results?.count ?? 0
+        return presenter?.movies.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as? MovieCollectionViewCell else { return UICollectionViewCell() }
-        let data = presenter?.movieModel?.results?[indexPath.row]
+        let data = presenter?.movies[indexPath.row]
         cell.configure(title: data?.title, url: data?.posterPath)
         return cell
     }
@@ -63,14 +63,12 @@ extension MovieViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
         // MARK: - Pagination
         let scrollOffset = scrollView.contentOffset.y + scrollView.frame.size.height
         
-        if scrollOffset > scrollView.contentSize.height {
+        if scrollOffset > scrollView.contentSize.height, presenter?.isLoadData == false {
             presenter?.isLoadData = true
-            print("Load data")
-//            presenter?.fetchPrograms()
+            presenter?.loadMoreData()
         }
     }
 }

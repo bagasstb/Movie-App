@@ -14,8 +14,8 @@ class ReviewInteractor: ReviewInteractorProtocol {
     weak var delegate: ReviewInteractorDelegate?
     var service: MovieServiceProtocol?
     
-    func getReview(by movieId: String) {
-        service?.getMovieReviewById(id: movieId, success: { [weak self] reviewModel in
+    func getReview(by movieId: String, page: String) {
+        service?.getMovieReviewById(id: movieId, page: page, success: { [weak self] reviewModel in
             self?.delegate?.getReviewDidSuccess(model: reviewModel)
         }, failure: { [weak self] error in
             self?.delegate?.serviceRequestDidFail(error, requestType: .default)

@@ -55,17 +55,27 @@ extension ReviewViewController: ReviewViewProtocol {
 extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.reviewModel?.results?.count ?? 0
+        return presenter?.reviews.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ReviewTableViewCell.identifier, for: indexPath) as? ReviewTableViewCell else { return UITableViewCell() }
         
-        let data = presenter?.reviewModel?.results?[indexPath.row]
+        let data = presenter?.reviews[indexPath.row]
         
         cell.configure(author: data?.author, review: data?.content)
         
         return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // MARK: - Pagination
+        let scrollOffset = scrollView.contentOffset.y + scrollView.frame.size.height
+        
+        if scrollOffset > scrollView.contentSize.height, presenter?.isLoadData == false {
+            presenter?.isLoadData = true
+            presenter?.loadMoreData()
+        }
     }
     
 }

@@ -15,10 +15,12 @@ protocol MovieViewProtocol: BaseViewProtocol {
 protocol MoviePresenterProtocol: BasePresenterProtocol {
     var genreItemModel: GenreItemModel? { get }
     var movieModel: MovieModel? { get }
+    var movies: [MovieItemModel] { get }
     var isLoadData: Bool { get set }
     
     func backPressed()
     func getData()
+    func loadMoreData()
     func movieDidSelect(with index: Int)
 }
 
@@ -28,7 +30,7 @@ protocol MovieWireframeProtocol: BaseWireframeProtocol {
 }
 
 protocol MovieInteractorProtocol: BaseInteractorProtocol {
-    func getMovie(with genre: String)
+    func getMovie(with genre: String, page: String)
 }
 
 protocol MovieInteractorDelegate: BaseInteractorDelegate {

@@ -15,9 +15,12 @@ protocol ReviewViewProtocol: BaseViewProtocol {
 protocol ReviewPresenterProtocol: BasePresenterProtocol {
     var movieItemModel: MovieItemModel? { get }
     var reviewModel: ReviewModel? { get }
+    var reviews: [ReviewItemModel] { get }
+    var isLoadData: Bool { get set }
     
     func backPressed()
     func getData()
+    func loadMoreData()
 }
 
 protocol ReviewWireframeProtocol: BaseWireframeProtocol {
@@ -25,7 +28,7 @@ protocol ReviewWireframeProtocol: BaseWireframeProtocol {
 }
 
 protocol ReviewInteractorProtocol: BaseInteractorProtocol {
-    func getReview(by movieId: String)
+    func getReview(by movieId: String, page: String)
 }
 
 protocol ReviewInteractorDelegate: BaseInteractorDelegate {

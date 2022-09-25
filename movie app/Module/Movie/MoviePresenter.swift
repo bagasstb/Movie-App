@@ -17,13 +17,14 @@ class MoviePresenter: MoviePresenterProtocol {
     
     var genreItemModel: GenreItemModel?
     var isLoadData: Bool = false
-    var movieModel: MovieModel? {
+    var movies: [MovieItemModel] = [] {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 self?.view?.reloadCollection()
             }
         }
     }
+    var movieModel: MovieModel?
     
     init(interactor: MovieInteractorProtocol, wireframe: MovieWireframeProtocol, genreItemModel: GenreItemModel) {
         self.interactor = interactor
@@ -33,7 +34,15 @@ class MoviePresenter: MoviePresenterProtocol {
     
     func getData() {
         guard let genre = genreItemModel?.id?.description else { return }
-        interactor.getMovie(with: genre)
+        interactor.getMovie(with: genre, page: 1.description)
+    }
+    
+    func loadMoreData() {
+        if (movieModel?.page ?? 0) < (movieModel?.totalPages ?? 0) {
+            guard let genre = genreItemModel?.id?.description else { return }
+            let page = (movieModel?.page ?? 0) + 1
+            interactor.getMovie(with: genre, page: page.description)
+        }
     }
     
     func backPressed() {
@@ -41,7 +50,7 @@ class MoviePresenter: MoviePresenterProtocol {
     }
     
     func movieDidSelect(with index: Int) {
-        guard let model = movieModel?.results?[index] else { return }
+        let model = movies[index]
         wireframe.pushMovieDetail(with: model)
     }
 }
@@ -50,6 +59,8 @@ extension MoviePresenter: MovieInteractorDelegate {
     
     func getMovieDidSuccess(model: MovieModel) {
         movieModel = model
+        movies.append(contentsOf: model.results ?? [])
+        isLoadData = false
     }
     
     func serviceRequestDidFail(_ error: NSError, requestType: RequestType?) {

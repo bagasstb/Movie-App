@@ -16,7 +16,9 @@ class ReviewPresenter: ReviewPresenterProtocol {
     let wireframe: ReviewWireframeProtocol
     
     var movieItemModel: MovieItemModel?
-    var reviewModel: ReviewModel? {
+    var isLoadData: Bool = false
+    var reviewModel: ReviewModel?
+    var reviews: [ReviewItemModel] = [] {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 self?.view?.reloadTable()
@@ -32,7 +34,16 @@ class ReviewPresenter: ReviewPresenterProtocol {
     
     func getData() {
         guard let movieId = movieItemModel?.id?.description else { return }
-        interactor.getReview(by: movieId)
+        interactor.getReview(by: movieId, page: 1.description)
+    }
+    
+    func loadMoreData() {
+        // MARK: - validate if there is a next page
+        if (reviewModel?.page ?? 0) < (reviewModel?.totalPages ?? 0) {
+            guard let movieId = movieItemModel?.id?.description else { return }
+            let page = (reviewModel?.page ?? 0) + 1
+            interactor.getReview(by: movieId, page: page.description)
+        }
     }
     
     func backPressed() {
@@ -44,6 +55,7 @@ extension ReviewPresenter: ReviewInteractorDelegate {
     
     func getReviewDidSuccess(model: ReviewModel) {
         reviewModel = model
+        reviews.append(contentsOf: model.results ?? [])
     }
     
     func serviceRequestDidFail(_ error: NSError, requestType: RequestType?) {

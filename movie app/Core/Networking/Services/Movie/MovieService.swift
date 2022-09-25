@@ -22,8 +22,8 @@ class MovieService: Services, MovieServiceProtocol {
         })
     }
     
-    func getMovieByGenre(genre: String, success: @escaping (MovieModel) -> Void, failure: @escaping (NSError) -> Void, unauthorized: @escaping () -> Void) {
-        guard let url = URL(string: Config.baseURL + MovieAPI.getMovie(genre: genre)) else { return }
+    func getMovieByGenre(genre: String, page: String, success: @escaping (MovieModel) -> Void, failure: @escaping (NSError) -> Void, unauthorized: @escaping () -> Void) {
+        guard let url = URL(string: Config.baseURL + MovieAPI.getMovie(genre: genre, page: page)) else { return }
         
         Services.shared.executeRequest(method: .get, url: url,
         success: { (response) in
@@ -33,8 +33,8 @@ class MovieService: Services, MovieServiceProtocol {
         })
     }
     
-    func getMovieReviewById(id: String, success: @escaping (ReviewModel) -> Void, failure: @escaping (NSError) -> Void, unauthorized: @escaping () -> Void) {
-        guard let url = URL(string: Config.baseURL + MovieAPI.getMovieReview(id: id)) else { return }
+    func getMovieReviewById(id: String, page: String, success: @escaping (ReviewModel) -> Void, failure: @escaping (NSError) -> Void, unauthorized: @escaping () -> Void) {
+        guard let url = URL(string: Config.baseURL + MovieAPI.getMovieReview(id: id, page: page)) else { return }
         
         Services.shared.executeRequest(method: .get, url: url,
         success: { (response) in
