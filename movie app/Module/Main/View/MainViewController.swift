@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
     }
     
     private func setupLabel() {
-        chooseGenreLabel.font = .fontAsset(font: .avenirMedium, size: 18)
+        chooseGenreLabel.font = .fontAsset(font: .avenirBlack, size: 18)
     }
     
 }
@@ -65,4 +65,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.genrePressed(with: indexPath.row)
+    }
 }

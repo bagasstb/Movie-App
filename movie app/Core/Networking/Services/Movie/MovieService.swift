@@ -12,8 +12,18 @@ class MovieService: Services, MovieServiceProtocol {
     static let authService = MovieService()
     
     func getGenre(success: @escaping (GenreModel) -> Void, failure: @escaping (NSError) -> Void, unauthorized: @escaping () -> Void) {
-        
         guard let url = URL(string: Config.baseURL + MovieAPI.getGenre() + Config.keyParam) else { return }
+        
+        Services.shared.executeRequest(method: .get, url: url,
+        success: { (response) in
+            success(response)
+        }, failure: { _, error in
+            self.handleErrorRequest(error: error, fail: failure, unauth: unauthorized)
+        })
+    }
+    
+    func getMovieByGenre(genre: String, success: @escaping (MovieModel) -> Void, failure: @escaping (NSError) -> Void, unauthorized: @escaping () -> Void) {
+        guard let url = URL(string: Config.baseURL + MovieAPI.getMovie(genre: genre) + Config.keyParam) else { return }
         
         Services.shared.executeRequest(method: .get, url: url,
         success: { (response) in

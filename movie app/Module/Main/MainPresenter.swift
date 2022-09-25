@@ -29,6 +29,11 @@ class MainPresenter: MainPresenterProtocol {
     func getData() {
         interactor.getGenre()
     }
+    
+    func genrePressed(with index: Int) {
+        guard let genre = genreModel?.genres?[index] else { return }
+        wireframe.pushMovieList(with: genre)
+    }
 }
 
 extension MainPresenter: MainInteractorDelegate {

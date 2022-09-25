@@ -27,6 +27,16 @@ class MainWireframe: MainWireframeProtocol {
         return view
     }
     
+    func pushMovieList(with genreItemModel: GenreItemModel) {
+        let router = Router()
+        let movieController = router.setupMovieViewController(with: genreItemModel)
+        controller?.navigationController?.pushViewController(movieController, animated: true)
+    }
+    
+    func pushMovieList() {
+        
+    }
+    
     func pushLogin() {
         
     }

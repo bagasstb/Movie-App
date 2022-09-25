@@ -16,9 +16,12 @@ protocol MainPresenterProtocol: BasePresenterProtocol {
     var genreModel: GenreModel? { get }
     
     func getData()
+    func genrePressed(with index: Int)
 }
 
-protocol MainWireframeProtocol: BaseWireframeProtocol {}
+protocol MainWireframeProtocol: BaseWireframeProtocol {
+    func pushMovieList(with genreItemModel: GenreItemModel)
+}
 
 protocol MainInteractorProtocol: BaseInteractorProtocol {
     func getGenre()
