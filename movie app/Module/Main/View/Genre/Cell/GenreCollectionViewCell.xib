@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GenreCollectionViewCell" customModule="movie_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="181" height="72"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="181" height="72"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIf-ka-E9y">
+                        <rect key="frame" x="4" y="4" width="173" height="64"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Emy-BM-BSx">
+                                <rect key="frame" x="16" y="10" width="141" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Emy-BM-BSx" firstAttribute="leading" secondItem="kIf-ka-E9y" secondAttribute="leading" constant="16" id="66F-mZ-CGo"/>
+                            <constraint firstAttribute="trailing" secondItem="Emy-BM-BSx" secondAttribute="trailing" constant="16" id="Cbj-DL-kaF"/>
+                            <constraint firstItem="Emy-BM-BSx" firstAttribute="top" secondItem="kIf-ka-E9y" secondAttribute="top" constant="10" id="aBU-y3-h4I"/>
+                            <constraint firstAttribute="bottom" secondItem="Emy-BM-BSx" secondAttribute="bottom" constant="10" id="ltT-yB-XeP"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="kIf-ka-E9y" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="4LU-aG-0Hu"/>
+                <constraint firstAttribute="trailing" secondItem="kIf-ka-E9y" secondAttribute="trailing" constant="4" id="MgF-DP-CEI"/>
+                <constraint firstItem="kIf-ka-E9y" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="dvI-hr-oJl"/>
+                <constraint firstAttribute="bottom" secondItem="kIf-ka-E9y" secondAttribute="bottom" constant="4" id="jL7-ni-w3Z"/>
+            </constraints>
+            <size key="customSize" width="181" height="72"/>
+            <connections>
+                <outlet property="containerView" destination="kIf-ka-E9y" id="m8X-gd-eM6"/>
+                <outlet property="genreLabel" destination="Emy-BM-BSx" id="LAM-3e-CCv"/>
+            </connections>
+            <point key="canvasLocation" x="94.615384615384613" y="28.436018957345969"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
