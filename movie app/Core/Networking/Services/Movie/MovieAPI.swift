@@ -18,5 +18,8 @@ extension Services {
         static func getMovieReview(id: String, page: String) -> String {
             return "movie/\(id)/reviews\(Config.keyParam)&language=en-US&page=\(page)"
         }
+        static func getTrailer(id: String) -> String {
+            return "movie/\(id)/videos\(Config.keyParam)&language=en-US"
+        }
     }
 }

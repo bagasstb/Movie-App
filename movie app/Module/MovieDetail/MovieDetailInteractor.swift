@@ -12,5 +12,15 @@ class MovieDetailInteractor: MovieDetailInteractorProtocol {
 
     // MARK: Properties
     weak var delegate: MovieDetailInteractorDelegate?
+    var service: MovieServiceProtocol?
     
+    func getTrailer(by movieId: String) {
+        service?.getTrailer(id: movieId, success: { [weak self] trailerModel in
+            self?.delegate?.getTrailerDidSuccess(model: trailerModel)
+        }, failure: { [weak self] error in
+            self?.delegate?.serviceRequestDidFail(error, requestType: .default)
+        }, unauthorized: { [weak self] in
+            self?.delegate?.userUnAuthorized()
+        })
+    }
 }

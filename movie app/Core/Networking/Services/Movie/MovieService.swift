@@ -44,6 +44,17 @@ class MovieService: Services, MovieServiceProtocol {
         })
     }
     
+    func getTrailer(id: String, success: @escaping (TrailerModel) -> Void, failure: @escaping (NSError) -> Void, unauthorized: @escaping () -> Void) {
+        guard let url = URL(string: Config.baseURL + MovieAPI.getTrailer(id: id)) else { return }
+        
+        Services.shared.executeRequest(method: .get, url: url,
+        success: { (response) in
+            success(response)
+        }, failure: { _, error in
+            self.handleErrorRequest(error: error, fail: failure, unauth: unauthorized)
+        })
+    }
+    
     func handleErrorRequest(error: NSError, fail: @escaping (NSError) -> Void, unauth: @escaping () -> Void) {
         switch error.code {
         case 401:

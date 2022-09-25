@@ -14,15 +14,23 @@ class MovieDetailWireframe: MovieDetailWireframeProtocol {
     weak var controller: MovieDetailViewController?
     
     func setupMovieDetailViewController(with movieItemModel: MovieItemModel) -> MovieDetailViewController {
+        let service = MovieService()
         let interactor = MovieDetailInteractor()
         let presenter = MovieDetailPresenter(interactor: interactor, wireframe: self, movieItemModel: movieItemModel)
         let view = MovieDetailViewController()
         interactor.delegate = presenter
+        interactor.service = service
         controller = view
         view.presenter = presenter
         presenter.view = view
         
         return view
+    }
+    
+    func pushTrailer(with url: URL) {
+//        guard let url = URL(string: "https://www.youtube.com/embed/xxSlvwYwvtw") else { return }
+        
+        controller?.showInAppBrowser(with: url)
     }
     
     func popViwController() {

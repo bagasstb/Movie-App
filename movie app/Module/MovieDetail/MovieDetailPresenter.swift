@@ -16,6 +16,7 @@ class MovieDetailPresenter: MovieDetailPresenterProtocol {
     let wireframe: MovieDetailWireframeProtocol
     
     var movieItemModel: MovieItemModel?
+    var trailerModel: TrailerModel?
     
     init(interactor: MovieDetailInteractorProtocol, wireframe: MovieDetailWireframeProtocol, movieItemModel: MovieItemModel) {
         self.interactor = interactor
@@ -24,7 +25,14 @@ class MovieDetailPresenter: MovieDetailPresenterProtocol {
     }
     
     func getData() {
-        guard let movieItemModel = movieItemModel else { return }
+        guard
+            let movieItemModel = movieItemModel,
+            let movieId = movieItemModel.id?.description
+        else {
+            return
+        }
+        
+        interactor.getTrailer(by: movieId)
         view?.setData(with: movieItemModel)
     }
     
@@ -36,9 +44,27 @@ class MovieDetailPresenter: MovieDetailPresenterProtocol {
         guard let movieItemModel = movieItemModel else { return }
         wireframe.pushReview(with: movieItemModel)
     }
+    
+    func playPressed() {
+        if (trailerModel?.results?.count ?? 0) > 0 {
+            let key = trailerModel?.results?[0].key ?? ""
+            guard let url = URL(string: "https://www.youtube.com/embed/" + key) else { return }
+            wireframe.pushTrailer(with: url)
+        }
+    }
 }
 
 extension MovieDetailPresenter: MovieDetailInteractorDelegate {
+    
+    func getTrailerDidSuccess(model: TrailerModel) {
+        trailerModel = model
+        DispatchQueue.main.async { [weak self] in
+            // MARK: - hide button if no video trailer available
+            if model.results?.count == 0 {
+                self?.view?.hidePlayButton()
+            }
+        }
+    }
     
     func serviceRequestDidFail(_ error: NSError, requestType: RequestType?) {
         

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 extension UIViewController {
     func setMainNavigation(title: String) {
@@ -17,6 +18,14 @@ extension UIViewController {
     func setBackNavigationItem(icon: UIImage = .commonAsset(.back), title: String, action: Selector, backgroundColor: UIColor = .white) {
         self.navigationItem.leftBarButtonItems = [barItem(with: icon, action: action), barItem(with: title)]
         self.navigationController?.navigationBar.backgroundColor = backgroundColor
+    }
+    
+    func showInAppBrowser(with url: URL) {
+        let config = SFSafariViewController.Configuration()
+        config.barCollapsingEnabled = true
+
+        let vc = SFSafariViewController(url: url, configuration: config)
+        present(vc, animated: true)
     }
     
     // MARK: - Private function

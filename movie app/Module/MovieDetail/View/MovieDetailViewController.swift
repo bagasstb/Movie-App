@@ -17,6 +17,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var voteLabel: UILabel!
     @IBOutlet weak var reviewButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var backdropImageView: UIImageView!
     
     var presenter: MovieDetailPresenterProtocol?
@@ -55,14 +56,25 @@ class MovieDetailViewController: UIViewController {
         presenter?.reviewPressed()
     }
     
+    @IBAction func playPressed(_ sender: UIButton) {
+        presenter?.playPressed()
+        
+    }
+    
 }
 
 // MARK: - View Protocol
 extension MovieDetailViewController: MovieDetailViewProtocol {
+    
+    func hidePlayButton() {
+        playButton.isHidden = true
+    }
+    
     func setData(with model: MovieItemModel) {
         let url = URL(string: "https://image.tmdb.org/t/p/w500/" + (model.backdropPath ?? ""))
         backdropImageView.kf.setImage(with: url)
         descriptionLabel.text = model.overview
         voteValueLabel.text = (model.voteAverage?.description ?? "0") + "/10 from " + (model.voteCount?.description ?? "0") + " vote count"
     }
+    
 }
