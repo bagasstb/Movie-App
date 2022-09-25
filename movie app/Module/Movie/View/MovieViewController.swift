@@ -58,4 +58,7 @@ extension MovieViewController: UICollectionViewDataSource, UICollectionViewDeleg
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.movieDidSelect(with: indexPath.row)
+    }
 }

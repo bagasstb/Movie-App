@@ -18,10 +18,12 @@ protocol MoviePresenterProtocol: BasePresenterProtocol {
     
     func backPressed()
     func getData()
+    func movieDidSelect(with index: Int)
 }
 
 protocol MovieWireframeProtocol: BaseWireframeProtocol {
     func popController()
+    func pushMovieDetail(with movieItemModel: MovieItemModel)
 }
 
 protocol MovieInteractorProtocol: BaseInteractorProtocol {

@@ -27,6 +27,12 @@ class MovieWireframe: MovieWireframeProtocol {
         return view
     }
     
+    func pushMovieDetail(with movieItemModel: MovieItemModel) {
+        let router = Router()
+        let movieDetailController = router.setupMovieDetailViewController(with: movieItemModel)
+        controller?.navigationController?.pushViewController(movieDetailController, animated: true)
+    }
+    
     func popController() {
         controller?.navigationController?.popViewController(animated: true)
     }

@@ -38,6 +38,11 @@ class MoviePresenter: MoviePresenterProtocol {
     func backPressed() {
         wireframe.popController()
     }
+    
+    func movieDidSelect(with index: Int) {
+        guard let model = movieModel?.results?[index] else { return }
+        wireframe.pushMovieDetail(with: model)
+    }
 }
 
 extension MoviePresenter: MovieInteractorDelegate {
