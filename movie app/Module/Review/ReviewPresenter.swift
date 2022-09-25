@@ -59,11 +59,13 @@ extension ReviewPresenter: ReviewInteractorDelegate {
     }
     
     func serviceRequestDidFail(_ error: NSError, requestType: RequestType?) {
-        
+        DispatchQueue.main.async { [weak self] in
+            self?.wireframe.showErrorAlert(error.description, requestType: .default)
+        }
     }
     
     func userUnAuthorized() {
-        
+        // MARK: - Implement later if auth feature needed
     }
     
 }

@@ -10,7 +10,7 @@ import Foundation
 struct Config {
     
     static let shared = Config()
-    static let key = "be3dd011af80c6488d69372bfce04105"
+    static let key = "Please replace with your key"
     static let keyParam = "?api_key=\(key)"
     
     static let baseURL: String = {

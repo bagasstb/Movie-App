@@ -6,7 +6,6 @@
 //  
 //
 
-import Foundation
 import UIKit
 
 class MainWireframe: MainWireframeProtocol {
@@ -33,20 +32,18 @@ class MainWireframe: MainWireframeProtocol {
         controller?.navigationController?.pushViewController(movieController, animated: true)
     }
     
-    func pushMovieList() {
-        
-    }
-    
     func pushLogin() {
-        
+        // MARK: - Implement call login page later if auth feature available
     }
     
     func showNoInternetAlert() {
-        
+        // MARK: - Implement connection detection for improvement
     }
     
     func showErrorAlert(_ message: String, requestType: RequestType?) {
-        
+        let alert = UIAlertController(title: "Something Wrong", message: "Please wait or try again", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        controller?.present(alert, animated: true, completion: nil)
     }
 
 }

@@ -64,7 +64,9 @@ extension MoviePresenter: MovieInteractorDelegate {
     }
     
     func serviceRequestDidFail(_ error: NSError, requestType: RequestType?) {
-        
+        DispatchQueue.main.async { [weak self] in
+            self?.wireframe.showErrorAlert(error.description, requestType: .default)
+        }
     }
     
     func userUnAuthorized() {
